@@ -13,7 +13,7 @@ router.route("/password/forgot").post(forgotPassword);
 
 router.route("/password/reset/:token").put(resetPassword);
 
-router.route("/logout").post(logout);
+router.route("/logout").get(logout);
 
 router.route("/me").get(isAuthenticatedUser,getUserDetails);
 
