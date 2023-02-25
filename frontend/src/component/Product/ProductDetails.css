@@ -1,5 +1,5 @@
 .ProductDetails {
-    background-color: grey;
+    background-color: #424242;
     width: 100vw;
     max-width: 100%;
     padding: 6vmax;
@@ -20,6 +20,7 @@
     padding: 2vmax;
     box-sizing: border-box;
     border: 1px solid white;
+    background-color: black;
   }
   
   .ProductDetails > div:last-child {
@@ -35,12 +36,12 @@
   }
 
   .detailsBlock-1 > h2 {
-    color: rgb(54, 54, 54);
+    color:white;
     font: 600 1.6vmax "Roboto";
   }
   
   .detailsBlock-1 > p {
-    color: rgba(54, 54, 54, 0.582);
+    color: white;
     font: 200 0.6vmax cursive;
   }
   
@@ -56,7 +57,7 @@
   
   .detailsBlock-2-span {
     font: 200 0.8vmax cursive;
-    color: rgba(0, 0, 0, 0.699);
+    color: white;
   }
   
   .detailsBlock-3 {
@@ -64,7 +65,7 @@
   }
   
   .detailsBlock-3 > h1 {
-    color: rgba(17, 17, 17, 0.795);
+    color: white;
     font: 400 1.8vmax "Franklin Gothic Medium";
     margin: 1vmax 0;
   }
@@ -92,7 +93,7 @@
     text-align: center;
     outline: none;
     font: 400 0.8vmax "Roboto";
-    color: rgba(0, 0, 0, 0.74);
+    color: black;
   }
   
   .detailsBlock-3-1 > button:last-child {
@@ -100,7 +101,7 @@
     cursor: pointer;
     color: white;
     transition: all 0.5s;
-    background-color: tomato;
+    background-color: red;
     font: 500 0.7vmax "Roboto";
     border-radius: 20px;
     padding: 0.5vmax 2vmax;
@@ -116,18 +117,18 @@
     border-top: 1px solid rgba(0, 0, 0, 0.205);
     border-bottom: 1px solid rgba(0, 0, 0, 0.205);
     padding: 1vmax 0;
-    color: rgba(0, 0, 0, 0.651);
+    color: red;
     font: 400 1vmax "Roboto";
     margin: 1vmax 0;
   }
   
   .detailsBlock-4 {
-    color: rgba(0, 0, 0, 0.897);
+    color:red;
     font: 500 1.2vmax sans-serif;
   }
   
   .detailsBlock-4 > p {
-    color: rgba(0, 0, 0, 0.534);
+    color: white;
     font: 300 0.8vmax sans-serif;
   }
 
@@ -137,7 +138,7 @@
 
   .submitReview {
     border: none;
-    background-color: tomato;
+    background-color: red;
     font: 500 0.7vmax "Roboto";
     border-radius: 20px;
     padding: 0.6vmax 2vmax;
@@ -164,10 +165,10 @@
   }
   
   .reviewsHeading {
-    color: #000000be;
+    color: black;
     font: 500 1.4vmax "Roboto";
     text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    border-bottom: 1px solid black;
     padding: 1vmax;
     width: 20vmax;
     margin: auto;
@@ -176,6 +177,8 @@
   .reviews {
     display: flex;
     overflow: auto;
+    background-color: #424242;
+    color: black;
   }
   
   .reviewCard {
@@ -189,6 +192,7 @@
     align-items: center;
     margin: 1vmax;
     padding: 3vmax;
+    background-color: white;
   }
   .reviewCard > img {
     width: 5vmax;

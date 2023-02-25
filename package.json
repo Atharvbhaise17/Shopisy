@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
+    "chart.js": "^3.9.1",
     "cloudinary": "^1.32.0",
     "cookie-parser": "^1.4.6",
     "country-state-city": "^3.1.2",
@@ -32,6 +34,7 @@
     "overlay-navbar": "^1.2.3",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",

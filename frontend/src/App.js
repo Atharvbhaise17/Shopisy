@@ -30,7 +30,18 @@ import { loadStripe } from "@stripe/stripe-js";
 import OrderSuccess from './component/Cart/OrderSuccess.js'
 import MyOrders from './component/Order/MyOrders.js'
 import OrderDetails from './component/Order/OrderDetails.js'
-
+import Dashboard from './component/admin/Dashboard.js'
+import ProductList from './component/admin/ProductList.js'
+import NewProduct from './component/admin/NewProduct.js'
+import UpdateProduct from './component/admin/UpdateProduct.js'
+import OrderList from './component/admin/OrderList.js'
+import ProcessOrder from './component/admin/ProcessOrder.js'
+import UsersList from './component/admin/UsersList.js'
+import UpdateUser from './component/admin/UpdateUser.js'
+import ProductReviews from './component/admin/ProductReviews.js'
+import Contact from './component/layout/contact/contact';
+import About from './component/layout/About/about'
+ 
 function App() {
   const {isAuthenticated,user} = useSelector(state => state.user);
   
@@ -231,11 +242,110 @@ function App() {
           </Fragment>
           
       } />
+
+      <Route exact path="/admin/dashboard" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated  ? <Dashboard user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
+
+      <Route exact path="/admin/products" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <ProductList user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
         
-        
+      <Route exact path="/admin/product" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <NewProduct user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
 
 
+      <Route exact path="/admin/product/:id" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <UpdateProduct user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
 
+
+      <Route exact path="/admin/orders" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <OrderList user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
+ 
+      <Route exact path="/admin/order/:id" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <ProcessOrder user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
+
+ 
+      <Route exact path="/admin/users" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <UsersList user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
+
+      <Route exact path="/admin/user/:id" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <UpdateUser user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
+
+
+      <Route exact path="/admin/reviews" element={
+        <Fragment>
+        <Header />
+        {isAuthenticated ? <ProductReviews user={user}/> : <Navigate to="/account" /> }  
+        <Footer/>
+          </Fragment>
+          
+      } />
+
+      <Route exact path="/contact" element={
+        <Fragment>
+        <Header />
+        <Contact />
+        <Footer/>
+          </Fragment>
+          
+      } />
+
+      
+      <Route exact path="/about" element={
+        <Fragment>
+        <Header />
+        <About />
+        <Footer/>
+          </Fragment>
+          
+      } />
        
       
       

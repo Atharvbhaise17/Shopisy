@@ -19,8 +19,8 @@ const categories = [
   "hoodies",
   "jeans",
   "kurti",
-  "Top",
-  "cloth"
+  "Dress",
+  "Saree" 
 ]
 
 const Products = () => {
@@ -81,7 +81,7 @@ const Products = () => {
 
     <div className="filterBox">
     <Typography >Price</Typography>
-    <Slider 
+    <Slider  className='range'
     value={price}
     onChange={priceHandeler}
     valueLabelDisplay = "auto"
@@ -105,7 +105,7 @@ const Products = () => {
     </ul>
 
     <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
+              <Typography component="legend" >Ratings Above</Typography>
               <Slider
                 value={ratings}
                 onChange={(e, newRating) => {

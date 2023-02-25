@@ -89,7 +89,10 @@ exports.forgotPassword = catchAsyncError (async (req,res,next) =>{
 
    await user.save({validateBeforeSave:false});
 
-   const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}` ;
+   const resetPasswordUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/password/reset/${resetToken}`;
+
 
    const message = `your password reset token is :- \n\n ${resetPasswordUrl} \n\n if you have not requested this email
    then please ignore it.` ;
@@ -294,22 +297,25 @@ exports.updateUserRole = catchAsyncError(async(req,res,next)=> {
  
 //delete user profile  --Admin
 
-exports.deleteUser = catchAsyncError(async(req,res,next)=> {
-
-    const user = await User.findByIdAndUpdate(req.params.id);
-
-    if(!user){
-        return next(new ErrorHander(`user does not exist with id : ${req.params.id}`));
+exports.deleteUser = catchAsyncError(async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+  
+    if (!user) {
+      return next(
+        new ErrorHander(`User does not exist with Id: ${req.params.id}`, 400)
+      );
     }
-
+  
+    const imageId = user.avatar.public_id;
+  
+    await cloudinary.v2.uploader.destroy(imageId);
+  
     await user.remove();
-
-
+  
     res.status(200).json({
-       success : true,
-       message : " user deleted sucessfully"
-    })
-    
-})
+      success: true,
+      message: "User Deleted Successfully",
+    });
+  });
 
 
